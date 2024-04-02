@@ -1,0 +1,26 @@
+// :root {
+
+//   --bg-primary: #242424
+//   --color: #ffffffde
+
+//   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+//   color-scheme: light dark;
+
+
+//   font-synthesis: none;
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// @media (prefers-color-scheme: light) {
+//   :root {
+    
+//   --bg-primary: #f7f6ef;
+//   --color:  #213547;
+//   }
+// }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
