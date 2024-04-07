@@ -1,5 +1,7 @@
+import { Outlet } from 'react-router-dom'
+
 function App() {
-  return <h1 className='m-4 inline-block'>hola mundo</h1>
+  return <Outlet />
 }
 
 export default App
