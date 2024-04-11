@@ -10,7 +10,9 @@ const LoginForm = () => {
         <Input label='Número de documento' name='identificationNumber' />
         <Password label='Contraseña' name='password' />
         <div className='flex justify-end'>
-          <Link to='/recuperarContrasena'>¿Olvidó la contraseña?</Link>
+          <Link className='link' to='/auth/recuperar-contrasena'>
+            ¿Olvidó la contraseña?
+          </Link>
         </div>
         <Button className='w-full mt-6' type='primary' htmlType='submit'>
           Ingresar
@@ -19,7 +21,9 @@ const LoginForm = () => {
           <span className='text-sm opacity-90'>
             ¿Todavía no tienes cuenta?{' '}
           </span>
-          <Link to='/registro'>¡Regístrate!</Link>
+          <Link className='link' to='/auth/crear-cuenta'>
+            ¡Regístrate!
+          </Link>
         </p>
       </Form>
     </>

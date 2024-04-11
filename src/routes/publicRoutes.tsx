@@ -6,20 +6,24 @@ import { LoginPage, RegisterPage } from '@/pages/auth'
 export const usePublicRoutes = () => {
   const publicRoutes = useRoutes([
     {
-      path: 'auth/*',
+      path: '/auth/*',
       element: <AuthLayout />,
       children: [
         {
-          path: 'login',
+          path: 'iniciar-sesion',
           element: <LoginPage />,
         },
         {
-          path: 'register',
+          path: 'crear-cuenta',
           element: <RegisterPage />,
         },
         {
+          path: 'recuperar-contrasena',
+          element: <p>recuperar contraseña</p>,
+        },
+        {
           path: '*',
-          element: <Navigate to='/auth/login' />,
+          element: <Navigate to='/auth/iniciar-sesion' />,
         },
       ],
     },
