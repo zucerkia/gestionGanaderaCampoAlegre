@@ -1,3 +1,6 @@
 export { default as Input } from './Input'
 export { default as Password } from './Password'
-export { default as Label } from './Label'
+export { default as Control } from './Control'
+export { default as Select } from './Select'
+export { default as DatePicker } from './DatePicker'
+export { default as Checkbox } from './Checkbox'

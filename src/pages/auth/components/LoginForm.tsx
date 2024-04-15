@@ -1,14 +1,18 @@
 import { Button, Form } from 'antd'
 import { Link } from 'react-router-dom'
 
-import { Input, Password } from '@/components/form'
+import { Control, Input, Password } from '@/components/form'
 
 const LoginForm = () => {
   return (
     <>
       <Form layout='vertical'>
-        <Input label='Número de documento' name='identificationNumber' />
-        <Password label='Contraseña' name='password' />
+        <Control label='Número de documento' name='identificationNumber'>
+          <Input />
+        </Control>
+        <Control label='Contraseña' name='password'>
+          <Password />
+        </Control>
         <div className='flex justify-end'>
           <Link className='link' to='/auth/recuperar-contrasena'>
             ¿Olvidó la contraseña?

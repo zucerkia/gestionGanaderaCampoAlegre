@@ -8,7 +8,7 @@ const AppRoutes = () => {
   const PublicRoutes = usePublicRoutes
   const PrivateRoutes = usePrivateRoutes
 
-  const isAuthenticated = true
+  const isAuthenticated = false
   return (
     <BrowserRouter basename={BASE_URL}>
       {isAuthenticated ? <PrivateRoutes /> : <PublicRoutes />}

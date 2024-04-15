@@ -1,10 +1,8 @@
-import { FormItemProps, Input } from 'antd'
-import Label from './Label'
+import { Input } from 'antd'
+import { type PasswordProps } from 'antd/es/input'
 
-const Password = (props: FormItemProps) => (
-  <Label {...props}>
-    <Input.Password size='middle' />
-  </Label>
+const Password = (props: PasswordProps) => (
+  <Input.Password size='middle' {...props} />
 )
 
 export default Password
