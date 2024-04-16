@@ -1,5 +1,7 @@
-import { HomeIcon, UserIcon } from '@heroicons/react/24/outline'
+import { HomeIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
+
 import Logo from '@/assets/logo-title.svg?react'
+import SidebarLink from './SidebarLink'
 
 const Sidebar = () => {
   return (
@@ -13,24 +15,14 @@ const Sidebar = () => {
             <ul role='list' className='flex flex-1 flex-col gap-y-7'>
               <li>
                 <ul role='list' className='space-y-1'>
-                  <li className=''>
-                    <a
-                      href=''
-                      className='font-semibold leading-6 text-sm p-2 flex gap-x-3 rounded-md bg-primary-dark text-white'
-                    >
-                      <HomeIcon className='h-6 w-6 flex-shrink-0' />
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href=''
-                      className='font-semibold leading-6 text-sm p-2 flex gap-x-3 rounded-md text-dark-white'
-                    >
-                      <UserIcon className='h-6 w-6 flex-shrink-0' />
-                      Team
-                    </a>
-                  </li>
+                  <SidebarLink to='dashboard'>
+                    <HomeIcon className='h-6 w-6 flex-shrink-0' />
+                    Dashboard
+                  </SidebarLink>
+                  <SidebarLink to='registros'>
+                    <DocumentTextIcon className='h-6 w-6 flex-shrink-0' />
+                    Mis registros
+                  </SidebarLink>
                 </ul>
               </li>
             </ul>

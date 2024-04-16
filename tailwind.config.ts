@@ -4,7 +4,7 @@ import defaultColors from 'tailwindcss/colors'
 export type DefaultColors = typeof defaultColors
 
 const colors = {
-  'dark-white': ' #f0f0f0',
+  'dark-white': '#fbfafb',
   black: '#333333',
   primary: {
     // DEFAULT: '#9bb3e8',
