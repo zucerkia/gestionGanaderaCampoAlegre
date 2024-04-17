@@ -1,21 +1,30 @@
+import dayjs from 'dayjs'
 import { Button } from 'antd'
 import { PlusIcon } from '@heroicons/react/24/outline'
 
 import { Card, Heading } from '@/components'
 import CattleTable from './components/CattleTable'
-
-import UseCattle from './hooks/UseCattle'
-import useModal from '@/hooks/useModal'
 import CattleForm from './components/CattleForm'
 
-const CattlePage = () => {
-  const { Modal, openModal } = useModal()
-  const { cattle } = UseCattle()
+import { useModal } from '@/hooks'
+import UseCattle from './hooks/UseCattle'
 
-  // const onSubmit = async (values: UserFormValues) => {
-  //   await addUser(values)
-  //   // closeModal()
-  // }
+import { CattleRegisterData } from './models'
+
+const CattlePage = () => {
+  const { Modal, openModal, closeModal } = useModal()
+  const { cattle, addCattle } = UseCattle()
+
+  const onSubmit = async ({ birthdate, name, breed }: CattleRegisterData) => {
+    await addCattle({
+      id: '1',
+      genre: 'female',
+      birthdate: dayjs(birthdate).format('DD-MM-YYYY'),
+      name,
+      breed,
+    })
+    closeModal()
+  }
 
   const ToolbarButton = () => (
     <Button
@@ -35,7 +44,7 @@ const CattlePage = () => {
         <CattleTable cattle={cattle} />
       </Card>
       <Modal>
-        <CattleForm />
+        <CattleForm onSubmit={onSubmit} />
       </Modal>
     </section>
   )

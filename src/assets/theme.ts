@@ -11,19 +11,17 @@ const { theme } = tw as unknown as {
   theme: (typeof tw)['theme'] & { colors: DefaultColors & Colors }
 }
 
+const defaultTheme = {
+  colorPrimary: theme.colors.primary.DEFAULT,
+  algorithm: true,
+}
+
 export const themeConfig: ThemeConfig = {
   components: {
-    Button: {
-      colorPrimary: theme.colors.primary.DEFAULT,
-      algorithm: true,
-    },
-    Input: {
-      colorPrimary: theme.colors.primary.DEFAULT,
-      algorithm: true,
-    },
-    Anchor: {
-      colorPrimary: theme.colors.primary.DEFAULT,
-      algorithm: true,
-    },
+    Button: defaultTheme,
+    Input: defaultTheme,
+    Anchor: defaultTheme,
+    Tabs: defaultTheme,
+    Pagination: defaultTheme,
   },
 }

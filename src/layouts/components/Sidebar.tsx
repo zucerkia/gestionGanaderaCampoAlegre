@@ -1,4 +1,11 @@
-import { HomeIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  DocumentTextIcon,
+  UserGroupIcon,
+  ChartBarSquareIcon,
+  TableCellsIcon,
+  IdentificationIcon,
+} from '@heroicons/react/24/outline'
 
 import Logo from '@/assets/logo-title.svg?react'
 import SidebarLink from './SidebarLink'
@@ -20,8 +27,24 @@ const Sidebar = () => {
                     Dashboard
                   </SidebarLink>
                   <SidebarLink to='registros'>
-                    <DocumentTextIcon className='h-6 w-6 flex-shrink-0' />
+                    <IdentificationIcon className='h-6 w-6 flex-shrink-0' />
                     Mis registros
+                  </SidebarLink>
+                  <SidebarLink to='produccion'>
+                    <ChartBarSquareIcon className='h-6 w-6 flex-shrink-0' />
+                    Producción
+                  </SidebarLink>
+                  <SidebarLink to='historia-clinica'>
+                    <DocumentTextIcon className='h-6 w-6 flex-shrink-0' />
+                    Historia clínica
+                  </SidebarLink>
+                  <SidebarLink to='inventario'>
+                    <TableCellsIcon className='h-6 w-6 flex-shrink-0' />
+                    Inventario
+                  </SidebarLink>
+                  <SidebarLink to='usuarios'>
+                    <UserGroupIcon className='h-6 w-6 flex-shrink-0' />
+                    Usuarios
                   </SidebarLink>
                 </ul>
               </li>
