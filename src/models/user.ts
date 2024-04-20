@@ -5,3 +5,6 @@ export interface User {
   documentNumber: string
   password: string
 }
+
+export type SecureUser = Omit<User, 'password'>
+export type UserLogin = Pick<User, 'documentNumber' | 'password'>

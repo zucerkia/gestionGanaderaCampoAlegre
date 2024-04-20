@@ -6,7 +6,7 @@ const UsersPage = () => {
   const { users } = useUsers()
   return (
     <section>
-      <Heading title='Datos de personal' />
+      <Heading title='Información del personal' />
       <Card title='Usuarios'>
         <UsersTable users={users} />
       </Card>

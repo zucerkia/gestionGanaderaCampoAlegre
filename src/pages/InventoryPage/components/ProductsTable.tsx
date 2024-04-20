@@ -28,15 +28,18 @@ const ProductsTable = ({ inventory, onDelete, onUpdate }: Props) => {
       title: 'Acciones',
       dataIndex: 'details',
       key: 'actions',
+      align: 'center',
       render: (_, { id }) => {
         const items: MenuProps['items'] = [
           { key: '1', label: 'Actualizar', onClick: () => onUpdate(id) },
           { key: '2', label: 'Eliminar', onClick: () => onDelete(id) },
         ]
         return (
-          <Dropdown menu={{ items }}>
-            <EllipsisVerticalIcon className='h-5 w-5' />
-          </Dropdown>
+          <div className='flex justify-center'>
+            <Dropdown menu={{ items }}>
+              <EllipsisVerticalIcon className='h-5 w-5' />
+            </Dropdown>
+          </div>
         )
       },
     },

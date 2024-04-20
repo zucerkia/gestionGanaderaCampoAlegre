@@ -1,7 +1,6 @@
-import { User } from '@/models'
+import { SecureUser } from '@/models'
 
-export type secureUser = Omit<User, 'password'>
-export type Users = secureUser[]
-export interface UserTableData extends secureUser {
+export type Users = SecureUser[]
+export interface UserTableData extends SecureUser {
   key: React.Key
 }

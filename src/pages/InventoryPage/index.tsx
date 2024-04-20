@@ -91,7 +91,7 @@ const InventoryPage = () => {
   ]
   return (
     <section>
-      <Heading title='Datos de inventario' />
+      <Heading title='Información de inventario' />
       <Card title='Productos' toolbar={renderToolbar()}>
         <Tabs defaultActiveKey='1' items={items} />
       </Card>

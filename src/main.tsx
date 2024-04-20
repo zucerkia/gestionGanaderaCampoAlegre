@@ -5,11 +5,14 @@ import { AppRoutes } from '@/routes/index.tsx'
 import './index.scss'
 import { ConfigProvider } from 'antd'
 import { themeConfig } from './assets/theme'
+import { AuthProvider } from './contexts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ConfigProvider theme={themeConfig}>
-      <AppRoutes />
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
     </ConfigProvider>
   </React.StrictMode>,
 )

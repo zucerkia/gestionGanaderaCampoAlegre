@@ -26,7 +26,7 @@ const CattlePage = () => {
     closeModal()
   }
 
-  const ToolbarButton = () => (
+  const renderToolbar = () => (
     <Button
       type='primary'
       className='flex items-center gap-x-2'
@@ -40,7 +40,7 @@ const CattlePage = () => {
   return (
     <section>
       <Heading title='Información general' />
-      <Card title='Mi ganado' toolbar={<ToolbarButton />}>
+      <Card title='Mi ganado' toolbar={renderToolbar()}>
         <CattleTable cattle={cattle} />
       </Card>
       <Modal>
