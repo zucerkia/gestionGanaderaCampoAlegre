@@ -39,11 +39,9 @@ const CattleForm = ({ onSubmit }: Props) => {
           <Input />
         </Control>
       </div>
-      <div className='flex justify-end'>
-        <Button type='primary' htmlType='submit'>
-          Crear registro
-        </Button>
-      </div>
+      <Button className='block ml-auto' type='primary' htmlType='submit'>
+        Crear registro
+      </Button>
     </Form>
   )
 }

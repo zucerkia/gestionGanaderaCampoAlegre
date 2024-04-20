@@ -2,8 +2,7 @@ import type { TableColumnsType } from 'antd'
 import { Table } from 'antd'
 import { EyeIcon } from '@heroicons/react/24/outline'
 
-import { Cattle } from '@/models/Cattle'
-import { CowData } from '../models'
+import { Cattle, CowData } from '../models'
 import { Link } from 'react-router-dom'
 
 type Props = {

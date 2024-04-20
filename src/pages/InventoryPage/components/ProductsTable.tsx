@@ -1,42 +1,22 @@
-import { useState } from 'react'
 import { Dropdown, Table } from 'antd'
-import type { MenuProps, TableColumnsType } from 'antd'
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline'
+import type { MenuProps, TableColumnsType } from 'antd'
 
-import UpdateProductForm from './UpdateProductForm'
-
-import { useModal } from '@/hooks'
-
-import { Inventory } from '@/models/Inventory'
-import { ProductData } from '../models'
+import { Inventory, ProductTableData } from '../models'
 
 type Props = {
   inventory: Inventory
+  onUpdate: (id: string) => void
+  onDelete: (id: string) => void
 }
 
-const ProductsTable = ({ inventory }: Props) => {
-  const [idProduct, setIdProduct] = useState('')
-  const { Modal: UpdateModal, openModal: openUpdateModal } = useModal()
-  const { Modal: DeleteModal, openModal: openDeleteModal } = useModal()
-
-  const InventoryData: ProductData[] = inventory.map((item) => ({
+const ProductsTable = ({ inventory, onDelete, onUpdate }: Props) => {
+  const InventoryData: ProductTableData[] = inventory.map((item) => ({
     ...item,
     key: item.id,
   }))
 
-  const onUpdate = (id: string) => {
-    setIdProduct(id)
-    openUpdateModal()
-  }
-
-  const onDelete = (id: string) => {
-    setIdProduct(id)
-    openDeleteModal()
-  }
-
-  const onSubmit = () => {}
-
-  const columns: TableColumnsType<ProductData> = [
+  const columns: TableColumnsType<ProductTableData> = [
     {
       title: 'Nombre',
       dataIndex: 'name',
@@ -62,15 +42,7 @@ const ProductsTable = ({ inventory }: Props) => {
     },
   ]
 
-  return (
-    <>
-      <Table columns={columns} dataSource={InventoryData} />
-      <UpdateModal>
-        <UpdateProductForm id={idProduct} onSubmit={onSubmit} />
-      </UpdateModal>
-      <DeleteModal>delete</DeleteModal>
-    </>
-  )
+  return <Table columns={columns} dataSource={InventoryData} />
 }
 
 export default ProductsTable

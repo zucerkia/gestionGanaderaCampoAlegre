@@ -1,6 +1,5 @@
 import { useState } from 'react'
-
-import { Cattle, Cow } from '@/models/Cattle'
+import { Cattle, Cow } from '../models'
 
 const useCattle = () => {
   const [cattle, setCattle] = useState<Cattle>([])

@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, PropsWithChildren } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-interface Props {
+export interface ModalProps {
   title?: string
   closeButton?: boolean
   isOpen: boolean
@@ -15,7 +15,7 @@ const Modal = ({
   children,
   isOpen,
   onClose,
-}: PropsWithChildren<Props>) => {
+}: PropsWithChildren<ModalProps>) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={onClose}>
@@ -44,10 +44,7 @@ const Modal = ({
             >
               <Dialog.Panel className='w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
                 {title && (
-                  <Dialog.Title
-                    as='h3'
-                    className='text-lg font-medium leading-6 text-gray-900'
-                  >
+                  <Dialog.Title as='h2' className='mb-8'>
                     {title}
                   </Dialog.Title>
                 )}

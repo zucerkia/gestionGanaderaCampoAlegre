@@ -1,4 +1,12 @@
-import { Cow } from '@/models/Cattle'
+export type Cow = {
+  id: string
+  name: string
+  breed: string
+  birthdate: string
+  genre: string
+}
+
+export type Cattle = Cow[]
 
 export interface CowData extends Omit<Cow, 'id'> {
   key: React.Key

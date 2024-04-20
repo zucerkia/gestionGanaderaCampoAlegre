@@ -1,27 +1,26 @@
 import { Control, Input, Select } from '@/components/form'
 import { Button, Form } from 'antd'
-import { ProductRegisterData } from '../models'
+import { NewProduct } from '../models'
+import { useModal } from '@/hooks'
 
 type Props = {
-  onSubmit: (values: ProductRegisterData) => void
+  onSubmit: (product: NewProduct) => void
 }
 const ProductsForm = ({ onSubmit }: Props) => {
-  const [form] = Form.useForm<ProductRegisterData>()
+  const [form] = Form.useForm<NewProduct>()
+  const { closeModal } = useModal()
 
-  const handleSubmit = (values: ProductRegisterData) => {
+  const handleSubmit = (values: NewProduct) => {
     try {
-      console.log(values)
       onSubmit(values)
       form.resetFields()
+      closeModal()
     } catch (error) {
       console.error(error)
     }
   }
   return (
     <Form form={form} layout='vertical' onFinish={handleSubmit}>
-      <div className='mb-11'>
-        <h1 className='text-gray-900 fw-bolder mb-3'>Registra tu producto</h1>
-      </div>
       <div className='grid grid-cols-2 gap-x-4'>
         <Control className='col-span-2' label='Nombre' name='name'>
           <Input />

@@ -1,7 +1,7 @@
 import { Navigate, useRoutes } from 'react-router-dom'
 
 import AppLayout from '@/layouts/AppLayout'
-import { CattlePage, DashboardPage, InventoryPage } from '@/pages'
+import { CattlePage, DashboardPage, InventoryPage, UsersPage } from '@/pages'
 
 export const usePrivateRoutes = () => {
   const privateRoutes = useRoutes([
@@ -24,6 +24,10 @@ export const usePrivateRoutes = () => {
         {
           path: 'inventario',
           element: <InventoryPage />,
+        },
+        {
+          path: 'usuarios',
+          element: <UsersPage />,
         },
         {
           path: '*',

@@ -1,5 +1,8 @@
 import { Modal as ModalUI } from '@/components'
+import { ModalProps } from '@/components/Modal'
 import { PropsWithChildren, useState } from 'react'
+
+type Props = Omit<ModalProps, 'isOpen' | 'onClose'>
 
 const useModal = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,8 +15,8 @@ const useModal = () => {
     setIsOpen(true)
   }
 
-  const Modal = ({ children }: PropsWithChildren) => (
-    <ModalUI isOpen={isOpen} onClose={closeModal}>
+  const Modal = ({ children, ...rest }: PropsWithChildren<Props>) => (
+    <ModalUI {...rest} isOpen={isOpen} onClose={closeModal}>
       {children}
     </ModalUI>
   )

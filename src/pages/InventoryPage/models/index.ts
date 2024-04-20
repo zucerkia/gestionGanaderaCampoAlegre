@@ -1,9 +1,17 @@
-import { Product } from '@/models/Inventory'
+export interface Product {
+  id: string
+  name: string
+  brand: string
+  type: 'alimento' | 'medicina'
+  quantity: number
+}
 
-export interface ProductData extends Omit<Product, 'type'> {
+export type Inventory = Product[]
+
+export interface ProductTableData extends Omit<Product, 'type'> {
   key: React.Key
 }
 
-export interface CattleRegisterData extends Omit<Product, 'id'> {}
+export type NewProduct = Omit<Product, 'id'>
 
-export interface ProductRegisterData {}
+export type UpdateProduct = Partial<Product>

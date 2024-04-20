@@ -1,18 +1,17 @@
 import { Control, Input, Select } from '@/components/form'
 import { Button, Form } from 'antd'
-import { ProductRegisterData } from '../models'
+import { Product, UpdateProduct } from '../models'
 
 type Props = {
   id: string
-  onSubmit: (values: ProductRegisterData) => void
+  onSubmit: (id: string, values: Partial<Product>) => void
 }
 const UpdateProductForm = ({ onSubmit, id }: Props) => {
-  const [form] = Form.useForm<ProductRegisterData>()
+  const [form] = Form.useForm<UpdateProduct>()
 
-  const handleSubmit = (values: ProductRegisterData) => {
+  const handleSubmit = (values: UpdateProduct) => {
     try {
-      console.log(values, id)
-      onSubmit(values)
+      onSubmit(id, values)
       form.resetFields()
     } catch (error) {
       console.error(error)
@@ -20,9 +19,6 @@ const UpdateProductForm = ({ onSubmit, id }: Props) => {
   }
   return (
     <Form form={form} layout='vertical' onFinish={handleSubmit}>
-      <div className='mb-11'>
-        <h1 className='text-gray-900 fw-bolder mb-3'>Actualiza tu producto</h1>
-      </div>
       <div className='grid grid-cols-2 gap-x-4'>
         <Control label='Acción' name='action'>
           <Select
@@ -36,11 +32,9 @@ const UpdateProductForm = ({ onSubmit, id }: Props) => {
           <Input />
         </Control>
       </div>
-      <div className='flex justify-end'>
-        <Button type='primary' htmlType='submit'>
-          Actualizar
-        </Button>
-      </div>
+      <Button className='block ml-auto' type='primary' htmlType='submit'>
+        Actualizar
+      </Button>
     </Form>
   )
 }
