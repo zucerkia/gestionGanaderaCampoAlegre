@@ -28,8 +28,8 @@ const CattleTable = ({ cattle }: Props) => {
       dataIndex: 'details',
       key: 'details',
       align: 'center',
-      render: (_, { name }) => (
-        <Link className='flex justify-center' to={`${name}`}>
+      render: (_, { id }) => (
+        <Link className='flex justify-center' to={`${id}`}>
           <EyeIcon className='w-5 h-5' />
         </Link>
       ),

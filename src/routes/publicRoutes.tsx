@@ -1,7 +1,7 @@
 import { Navigate, useRoutes } from 'react-router-dom'
 
 import AuthLayout from '@/layouts/AuthLayout'
-import { LoginPage, RegisterPage } from '@/pages/auth'
+import { ForgotPasswordPage, LoginPage, RegisterPage } from '@/pages/auth'
 
 export const usePublicRoutes = () => {
   const publicRoutes = useRoutes([
@@ -19,7 +19,7 @@ export const usePublicRoutes = () => {
         },
         {
           path: 'recuperar-contrasena',
-          element: <p>recuperar contraseña</p>,
+          element: <ForgotPasswordPage />,
         },
         {
           path: '*',

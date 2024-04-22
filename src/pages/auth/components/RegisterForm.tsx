@@ -47,7 +47,7 @@ const RegisterForm = () => {
           </Control>
         </div>
         <Button className='w-full mt-6' type='primary' htmlType='submit'>
-          Ingresar
+          Registrarse
         </Button>
         <p className='text-center mt-10'>
           <span className='text-sm opacity-90'>¿Ya tienes una cuenta? </span>

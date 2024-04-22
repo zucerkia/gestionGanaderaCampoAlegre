@@ -8,11 +8,11 @@ export type Cow = {
 
 export type Cattle = Cow[]
 
-export interface CowData extends Omit<Cow, 'id'> {
-  key: React.Key
-}
-
-export interface CattleRegisterData extends Omit<Cow, 'id' | 'genre'> {
+export interface newCow extends Omit<Cow, 'id'> {
   mother: string
   father: string
+}
+
+export interface CowData extends Cow {
+  key: React.Key
 }

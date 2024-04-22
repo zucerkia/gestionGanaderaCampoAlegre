@@ -9,19 +9,16 @@ import CattleForm from './components/CattleForm'
 import { useModal } from '@/hooks'
 import UseCattle from './hooks/UseCattle'
 
-import { CattleRegisterData } from './models'
+import { newCow } from './models'
 
 const CattlePage = () => {
   const { Modal, openModal, closeModal } = useModal()
   const { cattle, addCattle } = UseCattle()
 
-  const onSubmit = async ({ birthdate, name, breed }: CattleRegisterData) => {
+  const onSubmit = async ({ birthdate, ...cow }: newCow) => {
     await addCattle({
-      id: '1',
-      genre: 'female',
+      ...cow,
       birthdate: dayjs(birthdate).format('DD-MM-YYYY'),
-      name,
-      breed,
     })
     closeModal()
   }

@@ -1,14 +1,14 @@
 import { Control, Input, DatePicker } from '@/components/form'
 import { Button, Form } from 'antd'
-import { CattleRegisterData } from '../models'
+import { newCow } from '../models'
 
 type Props = {
-  onSubmit: (values: CattleRegisterData) => void
+  onSubmit: (values: newCow) => void
 }
 const CattleForm = ({ onSubmit }: Props) => {
-  const [form] = Form.useForm<CattleRegisterData>()
+  const [form] = Form.useForm<newCow>()
 
-  const handleSubmit = (values: CattleRegisterData) => {
+  const handleSubmit = (values: newCow) => {
     try {
       console.log(values)
       onSubmit(values)
@@ -24,6 +24,9 @@ const CattleForm = ({ onSubmit }: Props) => {
       </div>
       <div className='grid grid-cols-2 gap-x-4'>
         <Control className='col-span-2' label='Nombre' name='name'>
+          <Input />
+        </Control>
+        <Control name='genre' initialValue='female' hidden>
           <Input />
         </Control>
         <Control label='Raza' name='breed'>

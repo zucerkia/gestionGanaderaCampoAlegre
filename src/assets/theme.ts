@@ -23,5 +23,7 @@ export const themeConfig: ThemeConfig = {
     Anchor: defaultTheme,
     Tabs: defaultTheme,
     Pagination: defaultTheme,
+    DatePicker: defaultTheme,
+    Select: defaultTheme,
   },
 }
