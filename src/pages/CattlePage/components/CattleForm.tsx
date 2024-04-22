@@ -1,6 +1,6 @@
 import { Control, Input, DatePicker } from '@/components/form'
+import { newCow } from '@/models'
 import { Button, Form } from 'antd'
-import { newCow } from '../models'
 
 type Props = {
   onSubmit: (values: newCow) => void

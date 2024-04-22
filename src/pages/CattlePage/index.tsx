@@ -7,13 +7,12 @@ import CattleTable from './components/CattleTable'
 import CattleForm from './components/CattleForm'
 
 import { useModal } from '@/hooks'
-import UseCattle from './hooks/UseCattle'
-
-import { newCow } from './models'
+import { useCattle } from '../../hooks'
+import { newCow } from '@/models'
 
 const CattlePage = () => {
   const { Modal, openModal, closeModal } = useModal()
-  const { cattle, addCattle } = UseCattle()
+  const { cattle, addCattle } = useCattle()
 
   const onSubmit = async ({ birthdate, ...cow }: newCow) => {
     await addCattle({
