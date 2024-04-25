@@ -1,8 +1,23 @@
 import { Form, FormItemProps } from 'antd'
 import clsx from 'clsx'
 
-const Control = ({ className, children, ...props }: FormItemProps) => (
-  <Form.Item className={clsx('font-medium', className)} {...props}>
+import styles from './styles.module.scss'
+
+interface ControlProps extends FormItemProps {
+  onlyInfo?: boolean
+}
+
+const { infoInput } = styles
+const Control = ({
+  onlyInfo = false,
+  className,
+  children,
+  ...props
+}: ControlProps) => (
+  <Form.Item
+    className={clsx('font-medium', { [infoInput]: onlyInfo }, className)}
+    {...props}
+  >
     {children}
   </Form.Item>
 )

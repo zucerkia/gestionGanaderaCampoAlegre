@@ -14,10 +14,10 @@ const CattlePage = () => {
   const { Modal, openModal, closeModal } = useModal()
   const { cattle, addCattle } = useCattle()
 
-  const onSubmit = async ({ birthdate, ...cow }: newCow) => {
+  const onSubmit = async ({ birthday, ...cow }: newCow) => {
     await addCattle({
       ...cow,
-      birthdate: dayjs(birthdate).format('DD-MM-YYYY'),
+      birthday: dayjs(birthday).format('DD-MM-YYYY'),
     })
     closeModal()
   }

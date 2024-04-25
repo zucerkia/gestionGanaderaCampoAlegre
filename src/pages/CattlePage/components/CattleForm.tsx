@@ -20,7 +20,7 @@ const CattleForm = ({ onSubmit }: Props) => {
   return (
     <Form form={form} layout='vertical' onFinish={handleSubmit}>
       <div className='mb-11'>
-        <h1 className='text-gray-900 fw-bolder mb-3'>Registra tu ganado</h1>
+        <h2 className='text-gray-900 fw-bolder mb-3'>Registra tu ganado</h2>
       </div>
       <div className='grid grid-cols-2 gap-x-4'>
         <Control className='col-span-2' label='Nombre' name='name'>
@@ -32,7 +32,7 @@ const CattleForm = ({ onSubmit }: Props) => {
         <Control label='Raza' name='breed'>
           <Input />
         </Control>
-        <Control label='Fecha de nacimiento' name='birthdate'>
+        <Control label='Fecha de nacimiento' name='birthday'>
           <DatePicker />
         </Control>
         <Control label='Madre' name='motherName'>

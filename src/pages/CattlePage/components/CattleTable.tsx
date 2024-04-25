@@ -22,7 +22,7 @@ const CattleTable = ({ cattle }: Props) => {
       key: 'name',
     },
     { title: 'Raza', dataIndex: 'breed', key: 'breed' },
-    { title: 'Fecha de nacimiento', dataIndex: 'birthdate', key: 'birthdate' },
+    { title: 'Fecha de nacimiento', dataIndex: 'birthday', key: 'birthday' },
     {
       title: 'Detalle',
       dataIndex: 'details',

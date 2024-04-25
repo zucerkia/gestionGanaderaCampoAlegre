@@ -1,0 +1,27 @@
+.info-input {
+  :global {
+    .ant-form-item-label {
+      @apply p-0;
+    }
+    
+    input,
+    .ant-input,
+    .ant-picker {
+      @apply border-none p-0 bg-white text-black opacity-50 cursor-default;
+
+      .ant-picker-input {
+        input {
+          @apply cursor-default text-black opacity-100 text-xs font-bold;
+
+          &:hover {
+            @apply bg-white;
+          }
+        }
+      }
+
+      .ant-picker-suffix {
+        @apply hidden;
+      }
+    }
+  }
+}

@@ -28,7 +28,7 @@ const UpdateProductForm = ({ onSubmit, id }: Props) => {
             ]}
           />
         </Control>
-        <Control label='Cantidad inicial' name='quantity'>
+        <Control label='Cantidad' name='quantity'>
           <Input />
         </Control>
       </div>

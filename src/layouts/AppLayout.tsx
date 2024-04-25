@@ -8,7 +8,7 @@ const AppLayout = () => {
       <Sidebar />
       <div className='lg:pl-72'>
         <Header />
-        <main className='py-6 bg-dark-white min-h-[calc(100vh-4rem)]'>
+        <main className='py-6 bg-dark-white min-h-[calc(100vh-4rem)] sm:px-6 lg:px-8'>
           <Outlet />
         </main>
       </div>
