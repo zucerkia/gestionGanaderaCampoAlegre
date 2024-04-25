@@ -1,4 +1,5 @@
 import { Avatar, Dropdown, MenuProps } from 'antd'
+import { Link } from 'react-router-dom'
 import { BellAlertIcon } from '@heroicons/react/24/outline'
 
 import { useAuth } from '@/hooks/useAuth'
@@ -11,9 +12,13 @@ const Header = () => {
       label: <button onClick={logout}>Cerrar sesión</button>,
       key: '0',
     },
+    {
+      label: <Link to='perfil'>Mi perfil</Link>,
+      key: '1',
+    },
   ]
   return (
-    <nav className='sticky top-0 bg-white'>
+    <nav className='sticky top-0 bg-white z-[1]'>
       <div className='shadow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='flex h-16 items-center justify-between'>
           <div></div>

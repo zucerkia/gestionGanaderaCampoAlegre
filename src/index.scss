@@ -27,6 +27,10 @@
       @apply text-xl font-bold;
     }
 
+    h3 {
+      @apply font-bold leading-6 text-base;
+    }
+
     p {
       @apply text-base;
     }

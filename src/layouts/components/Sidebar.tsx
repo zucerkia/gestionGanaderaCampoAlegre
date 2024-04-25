@@ -42,10 +42,6 @@ const Sidebar = () => {
                     <TableCellsIcon className='h-6 w-6 flex-shrink-0' />
                     Inventario
                   </SidebarLink>
-                  <SidebarLink to='usuarios'>
-                    <UserGroupIcon className='h-6 w-6 flex-shrink-0' />
-                    Usuarios
-                  </SidebarLink>
                 </ul>
               </li>
             </ul>

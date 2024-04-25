@@ -3,11 +3,12 @@ import { Navigate, useRoutes } from 'react-router-dom'
 import AppLayout from '@/layouts/AppLayout'
 import {
   CattlePage,
+  CattleDetailPage,
   ClinicHistoryPage,
   DashboardPage,
   InventoryPage,
   ProductionPage,
-  UsersPage,
+  ProfilePage,
 } from '@/pages'
 
 export const usePrivateRoutes = () => {
@@ -26,15 +27,15 @@ export const usePrivateRoutes = () => {
         },
         {
           path: 'registros/:id',
-          element: <p>detalle</p>,
+          element: <CattleDetailPage />,
         },
         {
           path: 'inventario',
           element: <InventoryPage />,
         },
         {
-          path: 'usuarios',
-          element: <UsersPage />,
+          path: 'perfil',
+          element: <ProfilePage />,
         },
         {
           path: 'historia-clinica',
