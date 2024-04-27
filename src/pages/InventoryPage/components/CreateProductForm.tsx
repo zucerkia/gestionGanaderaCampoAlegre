@@ -1,7 +1,12 @@
-import { Control, Input, Select } from '@/components/form'
 import { Button, Form } from 'antd'
+
+import { Control, Input, Select, InputNumber } from '@/components/form'
+
 import { NewProduct } from '../models'
+
 import { useModal } from '@/hooks'
+
+import { requiredInput } from '@/utils/fieldValidations'
 
 type Props = {
   onSubmit: (product: NewProduct) => void
@@ -22,13 +27,23 @@ const ProductsForm = ({ onSubmit }: Props) => {
   return (
     <Form form={form} layout='vertical' onFinish={handleSubmit}>
       <div className='grid grid-cols-2 gap-x-4'>
-        <Control className='col-span-2' label='Nombre' name='name'>
+        <Control
+          className='col-span-2'
+          label='Nombre'
+          name='name'
+          rules={[requiredInput]}
+        >
           <Input />
         </Control>
-        <Control className='col-span-2' label='Marca' name='brand'>
+        <Control
+          className='col-span-2'
+          label='Marca'
+          name='brand'
+          rules={[requiredInput]}
+        >
           <Input />
         </Control>
-        <Control label='Tipo' name='type'>
+        <Control label='Tipo' name='type' rules={[requiredInput]}>
           <Select
             options={[
               { value: 1, label: 'Alimento' },
@@ -36,8 +51,18 @@ const ProductsForm = ({ onSubmit }: Props) => {
             ]}
           />
         </Control>
-        <Control label='Cantidad inicial' name='quantity'>
-          <Input />
+        <Control
+          label='Cantidad inicial'
+          name='quantity'
+          rules={[
+            requiredInput,
+            // {
+            //   type: 'integer',
+            // },
+            { min: 1, message: 'Debe ser mayor que cero' },
+          ]}
+        >
+          <InputNumber />
         </Control>
       </div>
       <div className='flex justify-end'>

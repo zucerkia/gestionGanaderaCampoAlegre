@@ -9,11 +9,11 @@ const Header = () => {
 
   const items: MenuProps['items'] = [
     {
-      label: <button onClick={logout}>Cerrar sesión</button>,
+      label: <Link to='perfil'>Mi perfil</Link>,
       key: '0',
     },
     {
-      label: <Link to='perfil'>Mi perfil</Link>,
+      label: <button onClick={logout}>Cerrar sesión</button>,
       key: '1',
     },
   ]

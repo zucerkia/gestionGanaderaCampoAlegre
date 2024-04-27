@@ -34,6 +34,7 @@ const DateDetails = ({ data }: Props) => {
         layout='vertical'
         onFinish={handleEditSubmit}
         className='grid grid-cols-2 gap-3'
+        disabled={isActive}
       >
         <Control
           onlyInfo={isActive}
@@ -41,7 +42,7 @@ const DateDetails = ({ data }: Props) => {
           name='heatDate'
           initialValue={dayjs(data.heatDate)}
         >
-          <DatePicker disabled={isActive} />
+          <DatePicker />
         </Control>
         <Control
           onlyInfo={isActive}
@@ -49,7 +50,7 @@ const DateDetails = ({ data }: Props) => {
           name='inseminationDate'
           initialValue={dayjs(data.inseminationDate)}
         >
-          <DatePicker disabled={isActive} />
+          <DatePicker />
         </Control>
         <Control
           onlyInfo={isActive}
@@ -57,7 +58,7 @@ const DateDetails = ({ data }: Props) => {
           name='dryingDate'
           initialValue={dayjs(data.dryingDate)}
         >
-          <DatePicker disabled={isActive} />
+          <DatePicker />
         </Control>
         <Control
           onlyInfo={isActive}
@@ -65,7 +66,7 @@ const DateDetails = ({ data }: Props) => {
           name='birthDate'
           initialValue={dayjs(data.birthDate)}
         >
-          <DatePicker disabled={isActive} />
+          <DatePicker />
         </Control>
         {!isActive && (
           <div className='flex gap-2 col-span-2 justify-end'>

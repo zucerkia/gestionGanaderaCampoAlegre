@@ -107,7 +107,7 @@ const InventoryPage = () => {
         </p>
         <Button
           onClick={() => onSubmitDelete(productId)}
-          className='block ml-auto bg-error'
+          className='block ml-auto'
           type='default'
         >
           Eliminar
