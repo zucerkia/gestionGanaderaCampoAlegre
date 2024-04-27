@@ -26,6 +26,6 @@ export type Cattle = Cow[]
 
 export interface newCow extends CowParents, Omit<Cow, 'id'> {}
 
-export interface CowData extends Cow {
+export interface CowTableData extends Cow {
   key: React.Key
 }

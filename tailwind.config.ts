@@ -14,7 +14,7 @@ const colors = {
   },
   alert: '#e8e29b',
   success: '#9be8a5',
-  error: '#e89bae',
+  error: '#d30f3f',
 }
 
 export type Colors = typeof colors

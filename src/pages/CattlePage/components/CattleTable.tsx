@@ -3,19 +3,19 @@ import { Table } from 'antd'
 import { EyeIcon } from '@heroicons/react/24/outline'
 
 import { Link } from 'react-router-dom'
-import { Cattle, CowData } from '@/models'
+import { Cattle, CowTableData } from '@/models'
 
 type Props = {
   cattle: Cattle
 }
 
 const CattleTable = ({ cattle }: Props) => {
-  const cattleData: CowData[] = cattle.map((cow) => ({
+  const cattleData: CowTableData[] = cattle.map((cow) => ({
     ...cow,
     key: cow.id,
   }))
 
-  const columns: TableColumnsType<CowData> = [
+  const columns: TableColumnsType<CowTableData> = [
     {
       title: 'Nombre',
       dataIndex: 'name',

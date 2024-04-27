@@ -1,6 +1,10 @@
-import { Control, Input, DatePicker } from '@/components/form'
-import { newCow } from '@/models'
 import { Button, Form } from 'antd'
+
+import { Control, Input, DatePicker } from '@/components/form'
+
+import { newCow } from '@/models'
+
+import { requiredInput } from '@/utils/fieldValidations'
 
 type Props = {
   onSubmit: (values: newCow) => void
@@ -23,22 +27,31 @@ const CattleForm = ({ onSubmit }: Props) => {
         <h2 className='text-gray-900 fw-bolder mb-3'>Registra tu ganado</h2>
       </div>
       <div className='grid grid-cols-2 gap-x-4'>
-        <Control className='col-span-2' label='Nombre' name='name'>
+        <Control
+          className='col-span-2'
+          label='Nombre'
+          name='name'
+          rules={[requiredInput]}
+        >
           <Input />
         </Control>
         <Control name='genre' initialValue='female' hidden>
           <Input />
         </Control>
-        <Control label='Raza' name='breed'>
+        <Control label='Raza' name='breed' rules={[requiredInput]}>
           <Input />
         </Control>
-        <Control label='Fecha de nacimiento' name='birthday'>
+        <Control
+          label='Fecha de nacimiento'
+          name='birthday'
+          rules={[requiredInput]}
+        >
           <DatePicker />
         </Control>
-        <Control label='Madre' name='motherName'>
+        <Control label='Madre' name='motherName' rules={[requiredInput]}>
           <Input />
         </Control>
-        <Control label='Padre' name='fatherName'>
+        <Control label='Padre' name='fatherName' rules={[requiredInput]}>
           <Input />
         </Control>
       </div>

@@ -25,5 +25,6 @@ export const themeConfig: ThemeConfig = {
     Pagination: defaultTheme,
     DatePicker: defaultTheme,
     Select: defaultTheme,
+    InputNumber: defaultTheme,
   },
 }
