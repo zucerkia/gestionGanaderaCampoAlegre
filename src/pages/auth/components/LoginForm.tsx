@@ -2,8 +2,12 @@ import { Button, Form } from 'antd'
 import { Link } from 'react-router-dom'
 
 import { Control, Input, Password } from '@/components/form'
+
 import { useAuth } from '@/hooks/useAuth'
+
 import { UserLogin } from '@/models'
+
+import { requiredInput } from '@/utils/fieldValidations'
 
 const LoginForm = () => {
   const { login } = useAuth()
@@ -13,10 +17,14 @@ const LoginForm = () => {
   }
   return (
     <Form layout='vertical' onFinish={handleSubmit}>
-      <Control label='Número de documento' name='identificationNumber'>
+      <Control
+        label='Número de documento'
+        name='identificationNumber'
+        rules={[requiredInput]}
+      >
         <Input />
       </Control>
-      <Control label='Contraseña' name='password'>
+      <Control label='Contraseña' name='password' rules={[requiredInput]}>
         <Password />
       </Control>
       <div className='flex justify-end'>
