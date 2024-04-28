@@ -1,6 +1,6 @@
 export interface Production {
   id: string
-  cow: string
+  cowId: string
   producedLiters: number
   productionDate: string
   quality: string
