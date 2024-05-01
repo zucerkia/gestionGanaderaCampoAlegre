@@ -1,4 +1,4 @@
-import { Button, Form } from 'antd'
+import { Button, Form, Select } from 'antd'
 
 import {
   Control,
@@ -6,13 +6,19 @@ import {
   DatePicker,
   InputNumber,
   TextArea,
+  SelectSearch,
 } from '@/components/form'
 
 import { NewClinicRegister } from '@/models'
 
 import { requiredInput } from '@/utils/fieldValidations'
+import type { SelectOptions } from '@/components/form/inputs/Select'
 
-const ClinicHistoryForm = () => {
+type Props = {
+  cattleOptions: SelectOptions
+}
+
+const ClinicHistoryForm = ({ cattleOptions }: Props) => {
   const [form] = Form.useForm<NewClinicRegister>()
 
   const handleSubmit = (values: NewClinicRegister) => {
@@ -33,15 +39,15 @@ const ClinicHistoryForm = () => {
     >
       <div className='grid grid-cols-4 gap-x-4'>
         <Control
-          className='col-span-2'
+          className='col-span-1'
           label='Nombre de la vaca'
           name='cowId'
           rules={[requiredInput]}
         >
-          <Input />
+          <SelectSearch options={cattleOptions} />
         </Control>
         <Control
-          className='col-span-2'
+          className='col-span-1'
           label='peso'
           name='weight'
           rules={[requiredInput]}
@@ -49,12 +55,65 @@ const ClinicHistoryForm = () => {
           <InputNumber />
         </Control>
         <Control
-          className='col-span-2'
+          className='col-span-1'
           label='Condición corporal'
           name='bodyCondition'
           rules={[requiredInput]}
         >
-          <Input />
+          <Select
+            options={Array(5)
+              .fill('')
+              .map((_, idx) => ({
+                value: idx + 1,
+                label: idx + 1,
+              }))}
+          />
+        </Control>
+        <Control
+          className='col-span-1'
+          label='Evolución'
+          name='evolution'
+          rules={[requiredInput]}
+        >
+          <Select
+            options={[
+              {
+                value: 1,
+                label: 'Ha mejorado',
+              },
+              {
+                value: 2,
+                label: 'Ha empeorado',
+              },
+              {
+                value: 3,
+                label: 'Sigue igual',
+              },
+            ]}
+          />
+        </Control>
+        <Control
+          className='col-span-2'
+          label='Medicamentos suministrados'
+          name='medicine'
+        >
+          <SelectSearch
+            mode='multiple'
+            options={[
+              {
+                value: 1,
+                label: 'Acetaminofem',
+              },
+              {
+                value: 2,
+                label: 'medicamento 1',
+              },
+              {
+                value: 3,
+                label: 'medicamento 3',
+              },
+            ]}
+          />
         </Control>
         <Control
           className='col-span-[2]'
@@ -79,19 +138,11 @@ const ClinicHistoryForm = () => {
         >
           <TextArea />
         </Control>
+
         <Control
           className='col-span-4'
-          label='Evolución'
-          name='evolution'
-          rules={[requiredInput]}
-        >
-          <TextArea />
-        </Control>
-        <Control
-          className='col-span-4'
-          label='Comentarios'
+          label='Comentarios adicionales'
           name='comments'
-          rules={[requiredInput]}
         >
           <TextArea />
         </Control>

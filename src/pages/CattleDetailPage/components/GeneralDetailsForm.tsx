@@ -14,7 +14,7 @@ type Props = {
   data: Pick<CowDetails, 'name' | 'breed' | 'birthday' | 'mother' | 'father'>
 }
 
-const GeneralDetails = ({ data }: Props) => {
+const GeneralDetailsForm = ({ data }: Props) => {
   const { toggle, isActive } = useToggle(true)
   const [form] = Form.useForm<CattleDetailForm>()
 
@@ -27,56 +27,52 @@ const GeneralDetails = ({ data }: Props) => {
   return (
     <Card
       title='Información general'
-      className='row-span-2'
+      className='col-span-2'
       toolbar={<Toolbar isActive={isActive} toggle={toggle} />}
     >
-      <Form
-        form={form}
-        layout='vertical'
-        className='grid grid-cols-2 gap-3'
-        onFinish={handleEditSubmit}
-      >
-        <Control
-          onlyInfo={isActive}
-          label='Nombre'
-          name='name'
-          className='col-span-2'
-          initialValue={data.name}
-        >
-          <Input disabled={isActive} />
-        </Control>
-        <Control
-          onlyInfo={isActive}
-          label='Raza'
-          name='breed'
-          initialValue={data.breed}
-        >
-          <Input disabled={isActive} />
-        </Control>
-        <Control
-          onlyInfo={isActive}
-          label='Fecha de nacimiento'
-          name='birthday'
-          initialValue={dayjs(data.birthday)}
-        >
-          <DatePicker disabled={isActive} />
-        </Control>
-        <Control
-          onlyInfo={isActive}
-          label='Padre'
-          name='father'
-          initialValue={data.father}
-        >
-          <Input disabled={isActive} />
-        </Control>
-        <Control
-          onlyInfo={isActive}
-          label='Madre'
-          name='mother'
-          initialValue={data.mother}
-        >
-          <Input disabled={isActive} />
-        </Control>
+      <Form form={form} layout='vertical' onFinish={handleEditSubmit}>
+        <div className='grid grid-cols-[20%_10%_25%_15%_15%] justify-between gap-3'>
+          <Control
+            onlyInfo={isActive}
+            label='Nombre'
+            name='name'
+            initialValue={data.name}
+          >
+            <Input disabled={isActive} />
+          </Control>
+          <Control
+            onlyInfo={isActive}
+            label='Raza'
+            name='breed'
+            initialValue={data.breed}
+          >
+            <Input disabled={isActive} />
+          </Control>
+          <Control
+            onlyInfo={isActive}
+            label='Fecha de nacimiento'
+            name='birthday'
+            initialValue={dayjs(data.birthday)}
+          >
+            <DatePicker disabled={isActive} />
+          </Control>
+          <Control
+            onlyInfo={isActive}
+            label='Padre'
+            name='father'
+            initialValue={data.father}
+          >
+            <Input disabled={isActive} />
+          </Control>
+          <Control
+            onlyInfo={isActive}
+            label='Madre'
+            name='mother'
+            initialValue={data.mother}
+          >
+            <Input disabled={isActive} />
+          </Control>
+        </div>
         {!isActive && (
           <div className='flex gap-2 col-span-2 justify-end'>
             <Button type='default' onClick={toggle}>
@@ -92,4 +88,4 @@ const GeneralDetails = ({ data }: Props) => {
   )
 }
 
-export default GeneralDetails
+export default GeneralDetailsForm

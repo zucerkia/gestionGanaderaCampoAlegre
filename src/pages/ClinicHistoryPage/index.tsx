@@ -4,17 +4,22 @@ import { Card, Heading } from '@/components'
 import ClinicHistoryForm from './components/ClinicHistoryForm'
 import VaccinationForm from './components/VaccinationForm'
 
+const opt = [
+  { value: '01', label: 'vaca 1' },
+  { value: '02', label: 'vaca 2' },
+]
+
 const ClinicHistoryPage = () => {
   const items: TabsProps['items'] = [
     {
       key: '1',
       label: 'General',
-      children: <ClinicHistoryForm />,
+      children: <ClinicHistoryForm cattleOptions={opt} />,
     },
     {
       key: '2',
       label: 'Vacunas',
-      children: <VaccinationForm />,
+      children: <VaccinationForm cattleOptions={opt} />,
     },
   ]
   return (

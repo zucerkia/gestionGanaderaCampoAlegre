@@ -6,7 +6,7 @@ import {
   DatePicker,
   InputNumber,
   TextArea,
-  Select,
+  SelectSearch,
 } from '@/components/form'
 
 import { newProduction } from '@/models'
@@ -33,13 +33,8 @@ const ProductionForm = ({ onSubmit }: Props) => {
         <h2 className='text-gray-900 fw-bolder mb-3'>Registra tu producción</h2>
       </div>
       <div className='grid grid-cols-2 gap-x-4'>
-        <Control label='Vaca' name='cow' rules={[requiredInput]}>
-          <Select
-            showSearch
-            optionFilterProp='children'
-            filterOption={(input, option) =>
-              ((option?.label as string) ?? '').includes(input)
-            }
+        <Control label='Nombre de la vaca' name='cow' rules={[requiredInput]}>
+          <SelectSearch
             options={[
               { value: '01', label: 'vaca 1' },
               { value: '02', label: 'vaca 2' },
@@ -63,12 +58,7 @@ const ProductionForm = ({ onSubmit }: Props) => {
         <Control label='Calidad' name='quality' rules={[requiredInput]}>
           <Input />
         </Control>
-        <Control
-          className='col-span-2'
-          label='Comentarios'
-          name='comments'
-          rules={[requiredInput]}
-        >
+        <Control className='col-span-2' label='Comentarios' name='comments'>
           <TextArea />
         </Control>
       </div>

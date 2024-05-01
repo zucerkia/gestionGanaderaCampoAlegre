@@ -16,7 +16,7 @@ type Props = {
   >
 }
 
-const DateDetails = ({ data }: Props) => {
+const DateDetailsForm = ({ data }: Props) => {
   const { toggle, isActive } = useToggle(true)
 
   const handleEditSubmit = () => {
@@ -27,7 +27,7 @@ const DateDetails = ({ data }: Props) => {
   return (
     <Card
       title='Fechas de control'
-      className='col-span-1'
+      className='col-start-2'
       toolbar={<Toolbar isActive={isActive} toggle={toggle} />}
     >
       <Form
@@ -83,4 +83,4 @@ const DateDetails = ({ data }: Props) => {
   )
 }
 
-export default DateDetails
+export default DateDetailsForm

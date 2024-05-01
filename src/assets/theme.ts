@@ -26,5 +26,6 @@ export const themeConfig: ThemeConfig = {
     DatePicker: defaultTheme,
     Select: defaultTheme,
     InputNumber: defaultTheme,
+    Switch: defaultTheme,
   },
 }

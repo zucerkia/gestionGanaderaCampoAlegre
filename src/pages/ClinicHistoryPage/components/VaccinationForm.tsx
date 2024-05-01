@@ -1,12 +1,24 @@
 import { Button, Form } from 'antd'
 
-import { Control, Input, DatePicker, InputNumber } from '@/components/form'
+import {
+  Control,
+  DatePicker,
+  InputNumber,
+  Select,
+  SelectSearch,
+  // Switch,
+} from '@/components/form'
 
 import { NewVaccination } from '@/models'
 
 import { requiredInput } from '@/utils/fieldValidations'
+import type { SelectOptions } from '@/components/form/inputs/Select'
 
-const VaccinationForm = () => {
+type Props = {
+  cattleOptions: SelectOptions
+}
+
+const VaccinationForm = ({ cattleOptions }: Props) => {
   const [form] = Form.useForm<NewVaccination>()
 
   const handleSubmit = (values: NewVaccination) => {
@@ -25,12 +37,23 @@ const VaccinationForm = () => {
       layout='vertical'
       onFinish={handleSubmit}
     >
-      <div className='grid grid-cols-4 gap-x-4'>
+      <div className='grid grid-cols-3 gap-x-4'>
         <Control label='Nombre de la vaca' name='cowId' rules={[requiredInput]}>
-          <Input />
+          <SelectSearch options={cattleOptions} />
         </Control>
         <Control label='Vacuna' name='vaccine' rules={[requiredInput]}>
-          <InputNumber />
+          <Select
+            options={[
+              {
+                value: 1,
+                label: 'Brucelosis',
+              },
+              {
+                value: 2,
+                label: 'Aftosa',
+              },
+            ]}
+          />
         </Control>
         <Control
           label='Fecha de aplicación'
@@ -38,9 +61,6 @@ const VaccinationForm = () => {
           rules={[requiredInput]}
         >
           <DatePicker />
-        </Control>
-        <Control label='Ya fue aplicada?' name='applied'>
-          <Input />
         </Control>
       </div>
       <Button className='block ml-auto' type='primary' htmlType='submit'>

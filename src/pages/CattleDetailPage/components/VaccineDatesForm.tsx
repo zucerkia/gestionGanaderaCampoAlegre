@@ -13,7 +13,7 @@ type Props = {
   data: Pick<CowDetails, 'aftosaVaccineDate' | 'brucellosisVaccineDate'>
 }
 
-const VaccineDates = ({ data }: Props) => {
+const VaccineDatesForm = ({ data }: Props) => {
   const { toggle, isActive } = useToggle(true)
 
   const handleEditSubmit = () => {
@@ -23,8 +23,8 @@ const VaccineDates = ({ data }: Props) => {
 
   return (
     <Card
-      title='Vacunas'
-      className='col-span-1'
+      title='Próximas vacunas'
+      className='col-start-2'
       toolbar={<Toolbar isActive={isActive} toggle={toggle} />}
     >
       <Form
@@ -63,4 +63,4 @@ const VaccineDates = ({ data }: Props) => {
   )
 }
 
-export default VaccineDates
+export default VaccineDatesForm

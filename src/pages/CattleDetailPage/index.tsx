@@ -4,9 +4,11 @@
 
 import { Heading } from '@/components'
 
-import GeneralDetails from './components/GeneralDetailsForm'
-import DateDetails from './components/DateDetailsForm'
-import VaccineDatesForm from './components/VaccineDates'
+import GeneralDetailsForm from './components/GeneralDetailsForm'
+import DateDetailsForm from './components/DateDetailsForm'
+import VaccineDatesForm from './components/VaccineDatesForm'
+import VaccineHistoryTable from './components/VaccinationHistoryTable'
+import { Vaccination } from '@/models'
 
 const vData = {
   aftosaVaccineDate: '2020/12/31',
@@ -28,13 +30,16 @@ const gData = {
   father: 'lalo',
 }
 
+const vhData: Vaccination[] = []
+
 const CattleDetailPage = () => {
   return (
     <section>
       <Heading title='Detalles del ganado' />
       <div className='grid grid-cols-2 grid-rows-[min-content] gap-4'>
-        <GeneralDetails data={gData} />
-        <DateDetails data={dData} />
+        <GeneralDetailsForm data={gData} />
+        <VaccineHistoryTable data={vhData} />
+        <DateDetailsForm data={dData} />
         <VaccineDatesForm data={vData} />
       </div>
     </section>
