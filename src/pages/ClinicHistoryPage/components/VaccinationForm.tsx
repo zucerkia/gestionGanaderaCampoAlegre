@@ -1,13 +1,6 @@
 import { Button, Form } from 'antd'
 
-import {
-  Control,
-  DatePicker,
-  InputNumber,
-  Select,
-  SelectSearch,
-  // Switch,
-} from '@/components/form'
+import { Control, DatePicker, Select, SelectSearch } from '@/components/form'
 
 import { NewVaccination } from '@/models'
 

@@ -1,7 +1,6 @@
 import {
   HomeIcon,
   DocumentTextIcon,
-  UserGroupIcon,
   ChartBarSquareIcon,
   TableCellsIcon,
   IdentificationIcon,

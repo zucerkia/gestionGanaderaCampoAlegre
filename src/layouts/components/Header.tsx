@@ -2,6 +2,8 @@ import { Avatar, Dropdown, MenuProps } from 'antd'
 import { Link } from 'react-router-dom'
 import { BellAlertIcon } from '@heroicons/react/24/outline'
 
+import NotificationBadge from './Notifications/NotificationBadge'
+
 import { useAuth } from '@/hooks/useAuth'
 
 const Header = () => {
@@ -24,7 +26,9 @@ const Header = () => {
           <div></div>
           <div className='hidden md:block'>
             <div className='ml-4 flex items-center md:ml-6 gap-4'>
-              <BellAlertIcon className='w-5 h-5' />
+              <NotificationBadge>
+                <BellAlertIcon className='w-5 h-5' />
+              </NotificationBadge>
               <Dropdown menu={{ items }} trigger={['click']}>
                 <Avatar className='bg-primary'>
                   {user && user[0].toUpperCase()}
