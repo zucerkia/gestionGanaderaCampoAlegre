@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Control, Input, Password } from '@/components/form'
 
-import { useAuth } from '@/hooks/useAuth'
+import { useAuth } from '@/hooks'
 
 import { UserLogin } from '@/models'
 
